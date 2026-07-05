@@ -3,7 +3,6 @@ import requests
 from rich import print, traceback
 traceback.install()
 
-
 data = requests.get("https://bar.emf.camp/api/on-tap.json").json()
 
 with printers.get_printer(printers.REMOTE) as p:

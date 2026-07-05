@@ -183,7 +183,8 @@ class ConsolePrinter(Printer):
     def _print(self, text):
         print("|"+" "*self.margin+str.ljust(text, self.width)+" "*self.margin+"|")
 
-def get_printer(type):
-    if type == CONSOLE: return ConsolePrinter()
-    elif type == REMOTE: return RemotePrinter()
-    elif type == RECEIPT: return ReceiptPrinter() 
+def get_printer(printer_type: int) -> Printer:
+    if printer_type == CONSOLE: return ConsolePrinter()
+    elif printer_type == REMOTE: return RemotePrinter()
+    elif printer_type == RECEIPT: return ReceiptPrinter()
+    else: raise Exception(f"Unsupported type of printer [{printer_type}]")
